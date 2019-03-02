@@ -1,5 +1,4 @@
-{% set version = '0.9-6' %}
-
+{% set version = '0.11-6' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,25 +7,26 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: qtlcharts_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/qtlcharts_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/qtlcharts/qtlcharts_{{ version }}.tar.gz
-  sha256: ad11490afbbc8fcd5c64870dc7cf80da9dfc9919b68674ef5bf2b0fc71e92f08
+    - {{ cran_mirror }}/src/contrib/qtlcharts_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/qtlcharts/qtlcharts_{{ version }}.tar.gz
+  sha256: 1777de9222a9a63616d4a4592a128726a0534f8e1470c0cef74b05725a0a9084
 
 build:
+  merge_build_host: True  # [win]
+  number: 0
   noarch: generic
-  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-htmlwidgets
     - r-qtl >=1.30_4
-
   run:
     - r-base
     - r-htmlwidgets
@@ -34,11 +34,11 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('qtlcharts')"  # [not win]
+    - $R -e "library('qtlcharts')"           # [not win]
     - "\"%R%\" -e \"library('qtlcharts')\""  # [win]
 
 about:
-  home: http://kbroman.org/qtlcharts
+  home: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
   license: GPL-3
   summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses
     to identify genetic loci (quantitative trait loci, QTL) contributing to variation
@@ -48,8 +48,27 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
+    - conda-forge/r
+
+# Package: qtlcharts
+# Version: 0.11-6
+# Date: 2019-02-04
+# Title: Interactive Graphics for QTL Experiments
+# Author: Karl W Broman [aut, cre], Michael Bostock [ctb, cph] (d3.js library in htmlwidgets/lib, https://d3js.org), Justin Palmer [ctb, cph] (d3.tip library in htmlwidgets/lib, https://github.com/caged/d3-tip), Cynthia Brewer [cph] (ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org), Mark Harrower [cph] (ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org), The Pennsylvania State University [cph] (ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org), jQuery Foundation [cph] (jQuery library in htmlwidgets/lib, https://jquery.com), jQuery contributors [ctb] (jQuery library in htmlwidgets/lib; see https://github.com/jquery/jquery/blob/master/AUTHORS.txt), jQuery UI contributors [ctb] (jQuery UI library in htmlwidgets/lib; see https://jqueryui.com/about)
+# Maintainer: Karl W Broman <broman@wisc.edu>
+# Description: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits.
+# Depends: R (>= 2.15)
+# Imports: qtl (>= 1.30-4), htmlwidgets, graphics, stats, utils
+# Suggests: htmltools, jsonlite, knitr, devtools, roxygen2, rmarkdown, testthat
+# License: GPL-3 | file LICENSE
+# URL: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
+# BugReports: https://github.com/kbroman/qtlcharts/issues
+# LazyData: true
+# Encoding: UTF-8
+# ByteCompile: true
+# RoxygenNote: 6.1.1
+# Authors@R: c( person("Karl W", "Broman", role=c("aut", "cre"), email="broman@wisc.edu"), person("Michael", "Bostock", role=c("ctb", "cph"), comment="d3.js library in htmlwidgets/lib, https://d3js.org"), person("Justin", "Palmer", role=c("ctb", "cph"), comment="d3.tip library in htmlwidgets/lib, https://github.com/caged/d3-tip"), person("Cynthia", "Brewer", role="cph", comment="ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org"), person("Mark", "Harrower", role="cph", comment="ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org"), person("The Pennsylvania State University", role="cph", comment="ColorBrewer library in htmlwidgets/lib, http://colorbrewer2.org"), person("jQuery Foundation", role="cph", comment="jQuery library in htmlwidgets/lib, https://jquery.com"), person("jQuery contributors", role = "ctb", comment = "jQuery library in htmlwidgets/lib; see https://github.com/jquery/jquery/blob/master/AUTHORS.txt"), person("jQuery UI contributors", role = "ctb", comment = "jQuery UI library in htmlwidgets/lib; see https://jqueryui.com/about"))
+# NeedsCompilation: no
+# Packaged: 2019-02-05 15:05:42 UTC; kbroman
+# Repository: CRAN
+# Date/Publication: 2019-02-05 16:20:03 UTC
