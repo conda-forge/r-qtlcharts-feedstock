@@ -39,10 +39,11 @@ test:
 
 about:
   home: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
