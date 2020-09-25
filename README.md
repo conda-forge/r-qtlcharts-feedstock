@@ -3,9 +3,9 @@ About r-qtlcharts
 
 Home: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits.
 
