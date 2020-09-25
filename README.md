@@ -3,7 +3,7 @@ About r-qtlcharts
 
 Home: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD-3-Clause
 
