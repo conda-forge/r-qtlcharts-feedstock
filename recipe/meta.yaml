@@ -1,4 +1,4 @@
-{% set version = "0.12-10" %}
+{% set version = "0.14" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qtlcharts_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qtlcharts/qtlcharts_{{ version }}.tar.gz
-  sha256: 04a01432f32642db578bfa517a3dc615a2bbc78db52b59aa36114ba6a25cf3e8
+  sha256: b7eff85156e499612548eb95f12202c47e56640e5f17069516120e9cbde903f1
 
 build:
   merge_build_host: true  # [win]
