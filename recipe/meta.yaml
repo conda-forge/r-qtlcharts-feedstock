@@ -1,4 +1,4 @@
-{% set version = "0.16" %}
+{% set version = "0.18" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qtlcharts_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qtlcharts/qtlcharts_{{ version }}.tar.gz
-  sha256: aa4dcc964d54b5beec388ee0db553c4a91ec49c1d5df5346d774f5b55863c7ad
+  sha256: af095fc68478994eb7f0f5ad06ef0d65a4baba9753265d796a392940b25334a8
 
 build:
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
