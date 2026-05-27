@@ -3,11 +3,13 @@ About r-qtlcharts-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-qtlcharts-feedstock/blob/main/LICENSE.txt)
 
-Home: https://kbroman.org/qtlcharts, https://github.com/kbroman/qtlcharts
+Home: https://kbroman.org/qtlcharts
 
 Package license: GPL-3.0-only
 
-Summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits.
+Summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits. Broman (2015) <doi:10.1534/genetics.114.172742>.
+
+Development: https://github.com/kbroman/qtlcharts
 
 Current build status
 ====================
@@ -16,7 +18,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/r-qtlcharts-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/r-qtlcharts-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
