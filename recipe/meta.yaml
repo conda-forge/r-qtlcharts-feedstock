@@ -1,15 +1,15 @@
-{% set version = "0.20" %}
+{% set version = "0.22" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-qtlcharts
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/qtlcharts_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qtlcharts/qtlcharts_{{ version }}.tar.gz
-  sha256: 82032bc3ae4139f827efa37dfbea7f360c368df937a90d7ad97067bf6f53eb22
+  sha256: 98947d7ea12266772dd30069ea1f797765975e40acbfc18768c9c170527ce445
 
 build:
   number: 0
@@ -44,9 +44,7 @@ about:
   home: https://kbroman.org/qtlcharts
   dev_url: https://github.com/kbroman/qtlcharts
   license: GPL-3.0-only
-  summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses
-    to identify genetic loci (quantitative trait loci, QTL) contributing to variation
-    in quantitative traits. Broman (2015) <doi:10.1534/genetics.114.172742>.
+  summary: Web-based interactive charts (using D3.js) for the analysis of experimental crosses to identify genetic loci (quantitative trait loci, QTL) contributing to variation in quantitative traits. Broman (2015) <doi:10.1534/genetics.114.172742>.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
